@@ -1,0 +1,20 @@
+research_task:
+  description: >
+    Conduct thorough research on {topic}.
+    Focus on finding the most up-to-date, interesting, and relevant information.
+    Your final answer MUST be a list of 10 bullet points.
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about {topic}
+  agent: researcher
+
+reporting_task:
+  description: >
+    Analyze the research findings provided by the researcher.
+    Based on these findings, compile a comprehensive report on {topic}.
+    The report should be well-structured, easy to read, and formatted as markdown.
+  expected_output: >
+    A fully fledged markdown report on {topic}.
+    The report must have a title, an introduction, sections for each key finding, and a conclusion.
+    Include sources with links when available.
+    The final output MUST NOT include the markdown "```" at the start or end of the report.
+  agent: reporting_analyst
