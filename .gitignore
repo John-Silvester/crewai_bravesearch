@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 outputs/
 knowledge/
+filetree.txt
+crewai_bravesearch.zip
