@@ -25,11 +25,16 @@ def save_report_callback(output):
     # Replace spaces and invalid characters.
     sanitized_filename = re.sub(r'[^\w\s-]', '', filename_base).strip().replace(' ', '_')
     filename = f"{sanitized_filename}.md"
-
-    # Save the report to a file in the root directory.
-    with open(filename, 'w', encoding='utf-8') as f:
+    
+    # Define the output directory and ensure it exists.
+    output_dir = 'output'
+    os.makedirs(output_dir, exist_ok=True)
+    
+    filepath = os.path.join(output_dir, filename)
+    # Save the report to a file in the output directory.
+    with open(filepath, 'w', encoding='utf-8') as f:
         f.write(markdown_content)
-    print(f"\n\n[crewai] Report saved as: {filename}")
+    print(f"\n\n[crewai] Report saved as: {filepath}")
 
 @CrewBase
 class CrewaiBravesearch():
