@@ -2,6 +2,7 @@
 __pycache__/
 .venv/
 outputs/
+output/
 knowledge/
 filetree.txt
 crewai_bravesearch.zip
