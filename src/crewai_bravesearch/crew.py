@@ -1,6 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from .tools.custom_tool import BraveSearchTool
+from crewai_tools import BraveSearchTool
 from dotenv import load_dotenv
 import os
 import re
@@ -53,7 +53,7 @@ class CrewaiBravesearch():
 	def researcher(self) -> Agent:
 		return Agent(
 			config=self.agents_config['researcher'],
-			tools=[BraveSearchTool()],
+			tools=[BraveSearchTool(api_key=os.getenv("BRAVE_API_KEY"))],
 			verbose=True
 		)
 
@@ -92,4 +92,3 @@ class CrewaiBravesearch():
 		)
 
 
-	
